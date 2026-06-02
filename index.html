@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kelompok 10 — Paradoks Dampak AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress"></div>
+
+<!-- Horizontal Scroll Progress Dots -->
+<div class="h-progress" id="h-progress"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     1. LOADING SCREEN
+     ═══════════════════════════════════════════════════════ -->
+<div id="loading">
+  <!-- Fase 0: Hello iPhone animation -->
+  <div id="loading-phase0">
+    <div class="hello-particles">
+      <span class="hello-particle">Hello</span>
+      <span class="hello-particle">Hola</span>
+      <span class="hello-particle">你好</span>
+      <span class="hello-particle">Bonjour</span>
+      <span class="hello-particle">Ciao</span>
+      <span class="hello-particle">こんにちは</span>
+      <span class="hello-particle">مرحبا</span>
+      <span class="hello-particle">안녕하세요</span>
+    </div>
+    <div id="hello-main">hello</div>
+  </div>
+
+  <!-- Fase 1: Logo IPB (0-5 detik) -->
+  <div id="loading-phase1" class="loading-phase">
+    <img src="assets/logos/logo ipb.png" alt="IPB University" id="loading-ipb-logo" />
+  </div>
+  <!-- Fase 2: Identitas kelompok (5-8 detik) -->
+  <div id="loading-phase2" class="loading-phase">
+    <div id="lt-kelompok-big">KELOMPOK 10</div>
+    <div id="lt-badge">FMIPA IPB University &middot; 2026</div>
+    <div id="lt-kelompok">Bahasa Indonesia</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     2. HERO
+     ═══════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-stars"></div>
+  <h1 class="hero-title hero-auto-reveal" id="hero-title"></h1>
+  <p class="hero-subtitle hero-auto-reveal" id="hero-subtitle"></p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     3. TEAM
+     ═══════════════════════════════════════════════════════ -->
+<section id="team">
+  <h2 class="team-heading gradient-text reveal" id="team-heading"></h2>
+  <div class="team-grid" id="team-grid"></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     4. LATAR BELAKANG
+     ═══════════════════════════════════════════════════════ -->
+<section id="background" class="text-section">
+  <div class="text-section-content">
+    <div class="badge reveal" id="bg-badge"></div>
+    <h2 class="section-heading reveal reveal-delay-1" id="bg-heading"></h2>
+    <div id="bg-paragraphs"></div>
+    <div class="stats-row" id="bg-stats"></div>
+    <div class="ai-tools-row" id="ai-tools-row"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     5. TUJUAN
+     ═══════════════════════════════════════════════════════ -->
+<section id="objectives" class="text-section">
+  <div class="text-section-content">
+    <div class="badge reveal" id="obj-badge"></div>
+    <h2 class="section-heading reveal reveal-delay-1" id="obj-heading"></h2>
+    <div class="questions-list" id="obj-questions"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     6. METODOLOGI
+     ═══════════════════════════════════════════════════════ -->
+<section id="methodology">
+  <div class="section-inner">
+    <div class="badge reveal" id="method-badge"></div>
+    <h2 class="section-heading reveal reveal-delay-1" id="method-heading"></h2>
+    <div class="method-cards" id="method-cards"></div>
+    <div class="method-stats-row" id="method-stats"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     7. PENGOLAHAN DATA — HORIZONTAL SCROLL
+     ═══════════════════════════════════════════════════════ -->
+<div id="horizontal-wrapper">
+  <div class="horizontal-track">
+    <div class="badge" style="position:absolute;top:2rem;left:2rem;z-index:10;" id="data-badge"></div>
+    <div class="horizontal-slides" id="horizontal-slides"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     8. PARADOKS
+     ═══════════════════════════════════════════════════════ -->
+<section id="paradox">
+  <div class="section-inner" style="max-width:1000px;">
+    <div class="badge reveal" id="paradox-badge"></div>
+    <h2 class="paradox-heading gradient-text-warm reveal reveal-delay-1" id="paradox-heading"></h2>
+    <div class="paradox-grid" id="paradox-grid"></div>
+    <div class="paradox-image-wrapper reveal reveal-delay-5" id="paradox-image"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     9. KESIMPULAN
+     ═══════════════════════════════════════════════════════ -->
+<section id="conclusion">
+  <div class="section-inner" style="max-width:900px;">
+    <div class="badge reveal" id="concl-badge"></div>
+    <h2 class="section-heading reveal reveal-delay-1" id="concl-heading"></h2>
+    <div class="conclusion-tiles" id="concl-tiles"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     10. ICE BREAKING
+     ═══════════════════════════════════════════════════════ -->
+<section id="ice-breaking">
+  <h2 class="icebreak-heading gradient-text reveal" id="ice-heading"></h2>
+  <p class="icebreak-subtitle reveal reveal-delay-1" id="ice-subtitle"></p>
+  <button class="icebreak-btn icebreak-btn-start reveal reveal-delay-2" id="btn-dance-start"></button>
+  <audio id="dance-audio" preload="auto"></audio>
+</section>
+
+<!-- Camera Overlay — macOS style fullscreen -->
+<div id="camera-overlay">
+  <div id="camera-modal">
+    <div class="camera-mac-bar">
+      <div class="mac-dots">
+        <span class="mac-dot mac-red"></span>
+        <span class="mac-dot mac-yellow"></span>
+        <span class="mac-dot mac-green"></span>
+      </div>
+      <span class="camera-mac-title">Dance · Kelompok 10 · 2026</span>
+      <div style="width:52px"></div>
+    </div>
+    <div class="camera-feed-wrap">
+      <video id="camera-feed" autoplay muted playsinline></video>
+      <div class="camera-rec-badge">
+        <span class="rec-dot"></span>REC
+      </div>
+    </div>
+    <div class="camera-actions">
+      <p class="camera-hint">Rekaman tersimpan otomatis saat kamu menutup</p>
+      <button class="camera-stop-btn" id="btn-dance-stop"></button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     10b. Q&A SESSION
+     ═══════════════════════════════════════════════════════ -->
+<section id="qna">
+  <div class="qna-glow"></div>
+  <div class="qna-inner">
+    <div class="badge qna-badge reveal">SESI TANYA JAWAB</div>
+    <h2 class="qna-heading reveal reveal-delay-1">Q<span class="qna-amp">&</span>A</h2>
+    <p class="qna-sub reveal reveal-delay-2">Ada pertanyaan? Kami siap menjawab.</p>
+    <div class="qna-divider reveal reveal-delay-3"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     11. CLOSING — DAFTAR PUSTAKA
+     ═══════════════════════════════════════════════════════ -->
+<section id="closing-references">
+  <div class="section-inner" style="max-width:1100px;">
+    <h2 class="references-heading reveal" id="ref-heading"></h2>
+    <ul class="references-list" id="ref-list"></ul>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     11b. CLOSING — KOLASE FOTO
+     ═══════════════════════════════════════════════════════ -->
+<section id="closing-kolase">
+  <div class="kolase-grid" id="kolase-grid"></div>
+  <div class="thank-you gradient-text" id="thank-you"></div>
+</section>
+
+<!-- Closing Audio -->
+<audio id="closing-audio" preload="auto"></audio>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════════ -->
+<script src="content.js"></script>
+<script>
+(() => {
+  const C = CONTENT;
+
+  // ─── LOADING ANIMATION (multi-phase, auto-dismiss) ──
+  document.body.style.overflow = 'hidden';
+
+  const ipbLogo = document.getElementById('loading-ipb-logo');
+
+  // ─── FASE 0: HELLO ANIMATION (~5 detik) ───────────
+  const phase0    = document.getElementById('loading-phase0');
+  const helloMain = document.getElementById('hello-main');
+  const helloParticles = phase0.querySelectorAll('.hello-particle');
+
+  // Partikel kata tersebar, stagger 350ms, tiap kata tampil 750ms
+  helloParticles.forEach((p, i) => {
+    const t = 400 + i * 350;
+    setTimeout(() => p.classList.add('show'), t);
+    setTimeout(() => p.classList.remove('show'), t + 750);
+  });
+
+  // "hello" mulai ditulis pada 700ms (efek draw kiri → kanan)
+  setTimeout(() => { helloMain.classList.add('writing'); }, 700);
+
+  // Phase 0 fade-out mulai detik ke-5
+  setTimeout(() => {
+    phase0.classList.add('fade-out');
+    setTimeout(() => { phase0.style.display = 'none'; }, 1500);
+  }, 5000);
+
+  // ─── JEDA + FASE 1: LOGO IPB (mulai detik ke-6.8) ──
+  // 5s hello + 0.9s fade + 0.9s jeda hitam = 6.8s
+  const PHASE1_START = 6800;
+  setTimeout(() => { ipbLogo.classList.add('visible'); }, PHASE1_START + 200);
+
+  // ─── FASE 2: KELOMPOK 10 ────────────────────────────
+  setTimeout(() => {
+    const phase1 = document.getElementById('loading-phase1');
+    phase1.style.opacity = '0';
+    phase1.style.transition = 'opacity 0.8s ease';
+
+    setTimeout(() => {
+      phase1.style.display = 'none';
+      const phase2 = document.getElementById('loading-phase2');
+      phase2.style.display = 'flex';
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        phase2.style.opacity = '1';
+        // Munculkan satu per satu
+        setTimeout(() => document.getElementById('lt-kelompok-big').classList.add('visible'), 100);
+        setTimeout(() => document.getElementById('lt-badge').classList.add('visible'), 600);
+        setTimeout(() => document.getElementById('lt-kelompok').classList.add('visible'), 900);
+      }));
+    }, 800);
+  }, PHASE1_START + 5000);
+
+  // ─── DISMISS OTOMATIS ────────────────────────────────
+  let loadingDismissed = false;
+  function dismissLoading() {
+    if (loadingDismissed) return;
+    loadingDismissed = true;
+    document.getElementById('loading').classList.add('hidden');
+    setTimeout(() => {
+      document.body.style.overflow = '';
+      document.querySelectorAll('.hero-auto-reveal').forEach((el, i) => {
+        setTimeout(() => el.classList.add('active'), i * 180);
+      });
+    }, 800);
+  }
+  setTimeout(dismissLoading, PHASE1_START + 9000);
+
+  // ─── POPULATE HERO ───────────────────────────────
+  document.getElementById('hero-title').innerHTML =
+    `${C.hero.titleLine1}<br><span class="gradient-text">${C.hero.titleLine2}</span><br>${C.hero.titleLine3}`;
+  document.getElementById('hero-subtitle').textContent = C.hero.subtitle;
+
+  // ─── 3D TILT EFFECT ──────────────────────────────
+  function addTilt(selector, intensity = 10) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width  - 0.5) * intensity;
+        const y = ((e.clientY - r.top)  / r.height - 0.5) * intensity;
+        el.style.transform = `perspective(900px) rotateY(${x}deg) rotateX(${-y}deg) translateZ(8px)`;
+        el.style.transition = 'transform 0.1s linear';
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        el.style.transition = 'transform 0.6s var(--ease-out-expo)';
+      });
+    });
+  }
+
+  // ─── POPULATE TEAM ───────────────────────────────
+  document.getElementById('team-heading').textContent = C.team.heading;
+  const teamGrid = document.getElementById('team-grid');
+  C.team.members.forEach((m, i) => {
+    const card = document.createElement('div');
+    card.className = `team-card reveal reveal-delay-${i + 1}`;
+    card.innerHTML = `
+      <div class="team-photo-wrapper">
+        <img src="${m.photo}" alt="" class="team-silhouette" aria-hidden="true" />
+        <img src="${m.photo}" alt="${m.name}" loading="lazy" class="team-photo-main" />
+      </div>
+      <div class="team-name">${m.name}</div>
+      <div class="team-nim">${m.nim}</div>
+    `;
+    teamGrid.appendChild(card);
+  });
+  addTilt('.method-card', 8);
+  addTilt('.conclusion-tile', 6);
+  addTilt('.paradox-card', 5);
+
+  // ─── POPULATE BACKGROUND ─────────────────────────
+  document.getElementById('bg-badge').textContent = C.background.badge;
+  document.getElementById('bg-heading').textContent = C.background.heading;
+  const bgP = document.getElementById('bg-paragraphs');
+  C.background.paragraphs.forEach((p, i) => {
+    const el = document.createElement('p');
+    el.className = `section-paragraph reveal reveal-delay-${i + 2}`;
+    el.textContent = p;
+    bgP.appendChild(el);
+  });
+  const bgStats = document.getElementById('bg-stats');
+  C.background.stats.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = `stat-item reveal reveal-delay-${i + 4}`;
+    el.innerHTML = `
+      <div class="stat-value gradient-text-${s.color === 'blue' ? 'cool' : ''}">${s.value}</div>
+      <div class="stat-label">${s.label}</div>
+    `;
+    bgStats.appendChild(el);
+  });
+
+  // ─── AI TOOLS ROW ─────────────────────────────────
+  const aiTools = [
+    { name: 'ChatGPT', img: 'assets/3d/GPT.png' },
+    { name: 'Gemini', img: 'assets/3d/Gemini.png' },
+    { name: 'Perplexity AI', img: 'assets/3d/Perplexity AI.png' },
+    { name: 'Mendeley', img: 'assets/3d/Mendeley.png' },
+  ];
+  const toolsRow = document.getElementById('ai-tools-row');
+  aiTools.forEach((tool, i) => {
+    const el = document.createElement('div');
+    el.className = `ai-tool-card reveal reveal-delay-${i + 2}`;
+    el.innerHTML = `
+      <div class="ai-tool-img-wrap">
+        <img src="${tool.img}" alt="${tool.name}" />
+      </div>
+      <div class="ai-tool-name">${tool.name}</div>
+    `;
+    toolsRow.appendChild(el);
+  });
+
+  // ─── POPULATE OBJECTIVES ─────────────────────────
+  document.getElementById('obj-badge').textContent = C.objectives.badge;
+  document.getElementById('obj-heading').textContent = C.objectives.heading;
+  const objQ = document.getElementById('obj-questions');
+  C.objectives.questions.forEach((q, i) => {
+    const el = document.createElement('div');
+    el.className = `question-item reveal reveal-delay-${i + 2}`;
+    el.innerHTML = `
+      <div class="question-number gradient-text">${q.number}</div>
+      <div class="question-text">${q.text}</div>
+    `;
+    objQ.appendChild(el);
+  });
+
+  // ─── POPULATE METHODOLOGY ────────────────────────
+  document.getElementById('method-badge').textContent = C.methodology.badge;
+  document.getElementById('method-heading').textContent = C.methodology.heading;
+  const mCards = document.getElementById('method-cards');
+  C.methodology.cards.forEach((c, i) => {
+    const el = document.createElement('div');
+    el.className = `method-card reveal reveal-delay-${i + 2}`;
+    el.innerHTML = `
+      <div class="method-card-icon">${c.icon}</div>
+      <div class="method-card-title">${c.title}</div>
+      <div class="method-card-desc">${c.desc}</div>
+    `;
+    mCards.appendChild(el);
+  });
+  const mStats = document.getElementById('method-stats');
+  C.methodology.statsRow.forEach((s, i) => {
+    const el = document.createElement('div');
+    el.className = `method-stat reveal reveal-delay-${i + 5}`;
+    el.innerHTML = `
+      <div class="method-stat-value gradient-text">${s.value}</div>
+      <div class="method-stat-label">${s.label}</div>
+    `;
+    mStats.appendChild(el);
+  });
+
+  // ─── POPULATE HORIZONTAL PANELS ──────────────────
+  document.getElementById('data-badge').textContent = C.dataProcessing.badge;
+  const hSlides = document.getElementById('horizontal-slides');
+  const hProgress = document.getElementById('h-progress');
+  const panels = C.dataProcessing.panels;
+
+  panels.forEach((p, i) => {
+    // Progress dot
+    const dot = document.createElement('div');
+    dot.className = 'h-dot' + (i === 0 ? ' active' : '');
+    hProgress.appendChild(dot);
+
+    // Panel
+    const panel = document.createElement('div');
+    panel.className = 'h-panel';
+
+    let visualHTML = '';
+
+    if (p.image && p.extraImage) {
+      visualHTML += `
+        <div class="chart-window">
+          <div class="chart-window-bar">
+            <div class="chart-dots">
+              <span class="chart-dot red"></span>
+              <span class="chart-dot yellow"></span>
+              <span class="chart-dot green"></span>
+            </div>
+            <span class="chart-window-title">${p.imageCaption || ''}</span>
+          </div>
+          <div class="chart-window-body chart-dual">
+            <img src="${p.image}" alt="${p.imageCaption || ''}" />
+            <img src="${p.extraImage}" alt="${p.extraCaption || ''}" />
+          </div>
+        </div>
+      `;
+    } else if (p.image) {
+      visualHTML += `
+        <div class="chart-window">
+          <div class="chart-window-bar">
+            <div class="chart-dots">
+              <span class="chart-dot red"></span>
+              <span class="chart-dot yellow"></span>
+              <span class="chart-dot green"></span>
+            </div>
+            <span class="chart-window-title">${p.imageCaption || ''}</span>
+          </div>
+          <div class="chart-window-body">
+            <img src="${p.image}" alt="${p.imageCaption || ''}" />
+          </div>
+        </div>
+      `;
+    }
+    if (p.table) {
+      let tableHTML = `<table class="h-table"><thead><tr>`;
+      p.table.headers.forEach(h => tableHTML += `<th>${h}</th>`);
+      tableHTML += `</tr></thead><tbody>`;
+      p.table.rows.forEach(r => {
+        tableHTML += `<tr>`;
+        r.forEach(c => tableHTML += `<td>${c}</td>`);
+        tableHTML += `</tr>`;
+      });
+      tableHTML += `</tbody></table>`;
+      visualHTML += tableHTML;
+    }
+    if (p.checks) {
+      visualHTML += `<div class="h-checks">`;
+      p.checks.forEach(c => {
+        visualHTML += `
+          <div class="h-check-item">
+            <div class="h-check-icon">✓</div>
+            <div>
+              <div class="h-check-name">${c.name}</div>
+              <div class="h-check-note">${c.note}</div>
+            </div>
+          </div>
+        `;
+      });
+      visualHTML += `</div>`;
+    }
+    if (p.models) {
+      visualHTML += `<div class="h-models">`;
+      p.models.forEach(m => {
+        visualHTML += `
+          <div class="h-model-card">
+            <div class="h-model-name">${m.name}</div>
+            <div class="h-model-eq">${m.equation}</div>
+            <div class="h-model-stats">
+              <span>R² = <strong>${m.r2}</strong></span>
+              <span>F (Sig.) = <strong>${m.fSig}</strong></span>
+            </div>
+          </div>
+        `;
+      });
+      visualHTML += `</div>`;
+    }
+
+    panel.innerHTML = `
+      <div class="h-panel-inner">
+        <div class="h-panel-text">
+          <div class="h-step">${p.step}</div>
+          <div class="h-title">${p.title}</div>
+          <div class="h-highlight">
+            <div class="h-highlight-value gradient-text">${p.highlight.value}</div>
+            <div class="h-highlight-label">${p.highlight.label}</div>
+          </div>
+          <div class="h-desc">${p.desc}</div>
+        </div>
+        <div class="h-panel-visual">${visualHTML}</div>
+      </div>
+    `;
+    hSlides.appendChild(panel);
+  });
+
+  // ─── HORIZONTAL SCROLL LOGIC ─────────────────────
+  const hWrapper = document.getElementById('horizontal-wrapper');
+  const totalPanels = panels.length;
+
+  const dots = document.querySelectorAll('.h-dot');
+
+  let targetX = 0;
+  let currentX = 0;
+  let hAnimRunning = false;
+
+  function isMobileLayout() { return window.innerWidth <= 768; }
+
+  function setupHorizontalScroll() {
+    if (isMobileLayout()) {
+      hWrapper.style.height = '';
+      hSlides.style.transform = '';
+      return;
+    }
+    hWrapper.style.height = ((totalPanels - 1) * 100) + 'vh';
+    if (!hAnimRunning) {
+      hAnimRunning = true;
+      animateHorizontal();
+    }
+  }
+
+  function updateHorizontalScroll() {
+    if (isMobileLayout()) return;
+
+    const rect = hWrapper.getBoundingClientRect();
+    const wrapperHeight = hWrapper.offsetHeight;
+    const scrollableHeight = wrapperHeight - window.innerHeight;
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / scrollableHeight));
+
+    targetX = progress * (totalPanels - 1) * -100;
+
+    const currentPanel = Math.round(progress * (totalPanels - 1));
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentPanel));
+
+    const inView = rect.top <= 0 && rect.bottom >= window.innerHeight;
+    hProgress.classList.toggle('active', inView);
+  }
+
+  function animateHorizontal() {
+    if (!isMobileLayout()) {
+      currentX += (targetX - currentX) * 0.1;
+      hSlides.style.transform = `translateX(${currentX}vw)`;
+    }
+    requestAnimationFrame(animateHorizontal);
+  }
+
+  setupHorizontalScroll();
+
+  // Re-setup on orientation change / resize
+  window.addEventListener('resize', () => {
+    setupHorizontalScroll();
+    onScroll();
+  });
+
+  // ─── POPULATE PARADOX ────────────────────────────
+  document.getElementById('paradox-badge').textContent = C.paradox.badge;
+  document.getElementById('paradox-heading').textContent = C.paradox.heading;
+  const pGrid = document.getElementById('paradox-grid');
+
+  // Left card (danger)
+  const leftCard = document.createElement('div');
+  leftCard.className = 'paradox-card danger reveal reveal-delay-2';
+  leftCard.innerHTML = `
+    <div class="paradox-indicator">!</div>
+    <div class="paradox-card-title">${C.paradox.left.title}</div>
+    <div class="paradox-card-subtitle" style="color:#ef4444;">${C.paradox.left.subtitle}</div>
+    <div class="paradox-beta gradient-text-warm">${C.paradox.left.beta}</div>
+    <div class="paradox-pvalue">${C.paradox.left.pValue}</div>
+    <div class="paradox-card-desc">${C.paradox.left.desc}</div>
+  `;
+  pGrid.appendChild(leftCard);
+
+  // Right card (safe)
+  const rightCard = document.createElement('div');
+  rightCard.className = 'paradox-card safe reveal reveal-delay-3';
+  rightCard.innerHTML = `
+    <div class="paradox-indicator">+</div>
+    <div class="paradox-card-title">${C.paradox.right.title}</div>
+    <div class="paradox-card-subtitle" style="color:#3b82f6;">${C.paradox.right.subtitle}</div>
+    <div class="paradox-beta gradient-text-cool">${C.paradox.right.beta}</div>
+    <div class="paradox-pvalue">${C.paradox.right.rho}</div>
+    <div class="paradox-card-desc">${C.paradox.right.desc}</div>
+  `;
+  pGrid.appendChild(rightCard);
+
+  // Paradox image
+  document.getElementById('paradox-image').innerHTML = `
+    <img src="${C.paradox.image}" alt="${C.paradox.imageCaption}" />
+    <div class="caption">${C.paradox.imageCaption}</div>
+  `;
+
+  // ─── POPULATE CONCLUSION ─────────────────────────
+  document.getElementById('concl-badge').textContent = C.conclusion.badge;
+  document.getElementById('concl-heading').textContent = C.conclusion.heading;
+  const cTiles = document.getElementById('concl-tiles');
+  C.conclusion.tiles.forEach((t, i) => {
+    const el = document.createElement('div');
+    el.className = `conclusion-tile reveal reveal-delay-${i + 2}`;
+    el.innerHTML = `
+      <div class="conclusion-tile-icon">${t.icon}</div>
+      <div class="conclusion-tile-title">${t.title}</div>
+      <div class="conclusion-tile-desc">${t.desc}</div>
+    `;
+    cTiles.appendChild(el);
+  });
+
+  // ─── POPULATE ICE BREAKING ───────────────────────
+  document.getElementById('ice-heading').textContent = C.iceBreaking.heading;
+  document.getElementById('ice-subtitle').textContent = C.iceBreaking.subtitle;
+  document.getElementById('btn-dance-start').textContent = C.iceBreaking.buttonStart;
+  document.getElementById('btn-dance-stop').textContent = C.iceBreaking.buttonStop;
+  document.getElementById('dance-audio').src = C.iceBreaking.musicPath;
+
+  // Camera / Recording logic
+  let mediaStream = null;
+  let mediaRecorder = null;
+  let recordedChunks = [];
+
+  function openCameraOverlay() {
+    const overlay = document.getElementById('camera-overlay');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCameraOverlay() {
+    document.getElementById('camera-overlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('btn-dance-start').addEventListener('click', async () => {
+    try {
+      mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 720 } },
+        audio: false
+      });
+
+      const video = document.getElementById('camera-feed');
+      video.srcObject = mediaStream;
+
+      // Show fullscreen macOS-style camera overlay
+      openCameraOverlay();
+
+      // Start music
+      const audio = document.getElementById('dance-audio');
+      audio.currentTime = 0;
+      audio.play();
+
+      // Start recording (fallback mimeType for broader support)
+      recordedChunks = [];
+      const mimeType = MediaRecorder.isTypeSupported('video/webm;codecs=vp9')
+        ? 'video/webm;codecs=vp9' : 'video/webm';
+      mediaRecorder = new MediaRecorder(mediaStream, { mimeType });
+      mediaRecorder.ondataavailable = (e) => {
+        if (e.data.size > 0) recordedChunks.push(e.data);
+      };
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `dance_kelompok10_${Date.now()}.webm`;
+        a.click();
+        URL.revokeObjectURL(url);
+      };
+      mediaRecorder.start();
+    } catch (err) {
+      alert('Tidak bisa akses kamera. Pastikan browser mengizinkan akses kamera.\n\nJika pakai file://, coba jalankan local server:\npython -m http.server 8000');
+      console.error(err);
+    }
+  });
+
+  document.getElementById('btn-dance-stop').addEventListener('click', () => {
+    // Stop recording
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+      mediaRecorder.stop();
+    }
+
+    // Stop camera
+    if (mediaStream) {
+      mediaStream.getTracks().forEach(t => t.stop());
+    }
+
+    // Stop music
+    document.getElementById('dance-audio').pause();
+
+    // Close overlay, resume scroll
+    closeCameraOverlay();
+  });
+
+  // ─── POPULATE CLOSING ────────────────────────────
+  document.getElementById('ref-heading').textContent = C.closing.references.heading;
+  const refList = document.getElementById('ref-list');
+  C.closing.references.items.forEach((r, i) => {
+    const li = document.createElement('li');
+    li.className = `reveal reveal-delay-${Math.min(i + 1, 8)}`;
+    li.textContent = r;
+    refList.appendChild(li);
+  });
+
+  // Kolase
+  const kolaseGrid = document.getElementById('kolase-grid');
+  C.closing.kolase.photos.forEach((p, i) => {
+    const el = document.createElement('div');
+    el.className = 'kolase-item';
+    el.innerHTML = `<img src="${p}" alt="Kolase ${i+1}" loading="lazy" />`;
+    kolaseGrid.appendChild(el);
+  });
+
+  document.getElementById('thank-you').textContent = C.closing.thankYou;
+  document.getElementById('closing-audio').src = C.closing.musicPath;
+
+  // ─── CLOSING AUDIO + KOLASE TIMING ──────────────
+  let closingTriggered = false;
+
+  function triggerClosingSequence() {
+    if (closingTriggered) return;
+    closingTriggered = true;
+
+    const audio = document.getElementById('closing-audio');
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+
+    const photoStartDelay = C.closing.musicPhotoStart * 1000; // 9000ms
+    const photoInterval   = 1600;   // 1.6s per foto — cepat
+    const thankYouAt      = 25000;  // detik ke-25 dari awal musik
+    const fadeBlackAt     = (C.closing.musicDuration - 3) * 1000; // detik ke-33
+
+    // ── Detik ke-9: kolase overlay muncul, foto mulai muncul satu-satu
+    setTimeout(() => {
+      document.getElementById('closing-references').style.opacity = '0';
+      document.getElementById('closing-kolase').classList.add('active');
+
+      const photos = document.querySelectorAll('.kolase-item');
+      photos.forEach((photo, i) => {
+        setTimeout(() => photo.classList.add('shown'), i * photoInterval);
+      });
+    }, photoStartDelay);
+
+    // ── Detik ke-25: foto-foto blur, "Terima Kasih" muncul di atas
+    setTimeout(() => {
+      document.querySelector('.kolase-grid').classList.add('blurred');
+      setTimeout(() => {
+        document.getElementById('thank-you').classList.add('shown');
+      }, 400); // sedikit delay setelah blur mulai
+    }, thankYouAt);
+
+    // ── Detik ke-33: fade to black pelan, lalu reload dari awal
+    setTimeout(() => {
+      const blackout = document.createElement('div');
+      blackout.style.cssText = 'position:fixed;inset:0;background:#000;z-index:200;opacity:0;transition:opacity 3s ease;pointer-events:none;';
+      document.body.appendChild(blackout);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        blackout.style.opacity = '1';
+      }));
+    }, fadeBlackAt);
+  }
+
+  // ─── INTERSECTION OBSERVER — BIDIRECTIONAL REVEAL ──
+  const fullRevealedSections = new Set();
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      } else {
+        const parentSection = entry.target.closest('#background, #closing-references');
+        if (!parentSection || !fullRevealedSections.has(parentSection.id)) {
+          entry.target.classList.remove('visible');
+        }
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // ─── SECTION FULL-REVEAL (pendahuluan + daftar pustaka) ──
+  const sectionFullRevealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const section = entry.target;
+        fullRevealedSections.add(section.id);
+        section.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right').forEach(el => {
+          el.classList.add('visible');
+        });
+      }
+    });
+  }, { threshold: 0.05 });
+
+  ['background', 'closing-references'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionFullRevealObserver.observe(el);
+  });
+
+  // ─── CLOSING TRIGGER OBSERVER ────────────────────
+  const closingObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        triggerClosingSequence();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  closingObserver.observe(document.getElementById('closing-references'));
+
+  // ─── SCROLL EVENT LISTENERS ──────────────────────
+  function onScroll() {
+    // Scroll progress bar
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = scrollPercent + '%';
+
+    // Horizontal scroll
+    updateHorizontalScroll();
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial call
+
+  // ─── HIDDEN KEYBOARD NAVIGATION (desktop operator only) ──
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    e.preventDefault();
+    window.scrollBy({ top: e.key === 'ArrowDown' ? window.innerHeight : -window.innerHeight, behavior: 'smooth' });
+  });
+
+})();
+</script>
+
+</body>
+</html>
